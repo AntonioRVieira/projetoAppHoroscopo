@@ -157,7 +157,7 @@
                                   <Component id="tfNome" min="-2" pref="202" max="-2" attributes="0"/>
                               </Group>
                               <Group type="103" alignment="0" groupAlignment="1" attributes="0">
-                                  <Component id="btDescobrirSigno" min="-2" pref="195" max="-2" attributes="0"/>
+                                  <Component id="btnDescobrirSigno" min="-2" pref="195" max="-2" attributes="0"/>
                                   <Group type="102" attributes="0">
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Component id="mesNascimento" min="-2" max="-2" attributes="0"/>
@@ -195,7 +195,7 @@
                               <Component id="cbMes" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="btDescobrirSigno" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnDescobrirSigno" min="-2" max="-2" attributes="0"/>
                           <EmptySpace pref="27" max="32767" attributes="0"/>
                       </Group>
                   </Group>
@@ -320,7 +320,7 @@
                     <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
                   </AuxValues>
                 </Component>
-                <Component class="javax.swing.JButton" name="btDescobrirSigno">
+                <Component class="javax.swing.JButton" name="btnDescobrirSigno">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="ff" green="ff" red="99" type="rgb"/>
@@ -330,6 +330,9 @@
                     </Property>
                     <Property name="text" type="java.lang.String" value="Descobrir Signo"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnDescobrirSignoActionPerformed"/>
+                  </Events>
                 </Component>
               </SubComponents>
             </Container>
@@ -475,6 +478,9 @@
                     </Property>
                     <Property name="text" type="java.lang.String" value="Calcular"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCalcularActionPerformed"/>
+                  </Events>
                 </Component>
               </SubComponents>
             </Container>
@@ -808,7 +814,7 @@
 
                   <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
                   <SubComponents>
-                    <Component class="javax.swing.JTextArea" name="txMensagemAries1">
+                    <Component class="javax.swing.JTextArea" name="txMensagemAries">
                       <Properties>
                         <Property name="columns" type="int" value="20"/>
                         <Property name="rows" type="int" value="5"/>
@@ -1056,23 +1062,19 @@
                       <Group type="102" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="tfTrabalhoAries" alignment="0" max="32767" attributes="0"/>
+                              <Component id="tfSorteAries" alignment="0" max="32767" attributes="0"/>
+                              <Component id="tfSaudeAries" alignment="0" max="32767" attributes="0"/>
                               <Group type="102" attributes="0">
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="tituloEnergiaAries" min="-2" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="tituloEnergiaAries" min="-2" max="-2" attributes="0"/>
+                                      <Component id="saudeAries" min="-2" pref="64" max="-2" attributes="0"/>
+                                      <Component id="sorteAries" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  </Group>
                                   <EmptySpace min="0" pref="304" max="32767" attributes="0"/>
                               </Group>
-                              <Component id="tfSorteAries" alignment="0" max="32767" attributes="0"/>
-                              <Component id="tfSaudeAries" alignment="1" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" attributes="0">
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="saudeAries" min="-2" pref="64" max="-2" attributes="0"/>
-                              <Component id="sorteAries" alignment="0" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -1091,9 +1093,9 @@
                           <Component id="tfTrabalhoAries" min="-2" pref="34" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="saudeAries" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="3" max="-2" attributes="0"/>
-                          <Component id="tfSaudeAries" min="-2" pref="34" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
+                          <Component id="tfSaudeAries" min="-2" pref="34" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="3" max="-2" attributes="0"/>
                           <Component id="sorteAries" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="tfSorteAries" min="-2" pref="42" max="-2" attributes="0"/>
@@ -1144,12 +1146,24 @@
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="tfAmorAries">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="78%"/>
+                  </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="tfTrabalhoAries">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="88%"/>
+                  </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="tfSaudeAries">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="82%"/>
+                  </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="tfSorteAries">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="75%"/>
+                  </Properties>
                 </Component>
               </SubComponents>
             </Container>
@@ -1231,7 +1245,6 @@
                                           <Component id="planetaAquario" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                           <Component id="tfPlanetaAquario" min="-2" pref="112" max="-2" attributes="0"/>
-                                          <EmptySpace max="32767" attributes="0"/>
                                       </Group>
                                       <Group type="102" alignment="0" attributes="0">
                                           <Component id="elementoAquario" min="-2" max="-2" attributes="0"/>
@@ -1819,12 +1832,24 @@
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="tfAmorAquario">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="65%"/>
+                  </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="tfTrabalhoAquario">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="88%"/>
+                  </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="tfSaudeAquario">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="70%"/>
+                  </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="tfSorteAquario">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="90%"/>
+                  </Properties>
                 </Component>
               </SubComponents>
             </Container>
@@ -2208,7 +2233,7 @@
 
                   <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
                   <SubComponents>
-                    <Component class="javax.swing.JTextArea" name="txMelhorarGemeos">
+                    <Component class="javax.swing.JTextArea" name="txMelhorarCancer">
                       <Properties>
                         <Property name="columns" type="int" value="20"/>
                         <Property name="rows" type="int" value="5"/>
@@ -2418,12 +2443,24 @@
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="tfAmorCancer">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="92%"/>
+                  </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="tfTrabalhoCancer">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="70%"/>
+                  </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="tfSaudeCancer">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="68%"/>
+                  </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="tfSorteCancer">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="78%"/>
+                  </Properties>
                 </Component>
               </SubComponents>
             </Container>
@@ -2795,8 +2832,11 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jScrollPane43" alignment="0" pref="368" max="32767" attributes="0"/>
-                              <Component id="jScrollPane44" alignment="0" max="32767" attributes="0"/>
+                              <Group type="102" attributes="0">
+                                  <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
+                                  <Component id="jScrollPane43" pref="362" max="32767" attributes="0"/>
+                              </Group>
+                              <Component id="jScrollPane44" alignment="0" pref="368" max="32767" attributes="0"/>
                               <Group type="102" alignment="0" attributes="0">
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Component id="pfortesGemeos1" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -2877,7 +2917,7 @@
 
                   <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
                   <SubComponents>
-                    <Component class="javax.swing.JTextArea" name="txFortesGemeos1">
+                    <Component class="javax.swing.JTextArea" name="txFortesGemeos">
                       <Properties>
                         <Property name="columns" type="int" value="20"/>
                         <Property name="rows" type="int" value="5"/>
@@ -3096,12 +3136,24 @@
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="tfAmorGemeos1">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="72%"/>
+                  </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="tfTrabalhoGemeos1">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="85%"/>
+                  </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="tfSaudeGemeos1">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="65%"/>
+                  </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="tfSorteGemeos">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="80%"/>
+                  </Properties>
                 </Component>
               </SubComponents>
             </Container>
@@ -3166,7 +3218,7 @@
 
                   <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
                   <SubComponents>
-                    <Component class="javax.swing.JTextArea" name="txMensagemGemeos1">
+                    <Component class="javax.swing.JTextArea" name="txMensagemGemeos">
                       <Properties>
                         <Property name="columns" type="int" value="20"/>
                         <Property name="rows" type="int" value="5"/>
@@ -3687,28 +3739,23 @@
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="tfSorteLeao" alignment="0" max="32767" attributes="0"/>
                               <Component id="tfSaudeLeao" alignment="1" max="32767" attributes="0"/>
-                              <Group type="102" alignment="0" attributes="0">
+                              <Component id="tfTrabalhoLeao" alignment="0" max="32767" attributes="0"/>
+                              <Group type="102" attributes="0">
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="102" alignment="0" attributes="0">
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="tituloEnergiaLeao" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <Component id="trabalhoLeao" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace min="0" pref="304" max="32767" attributes="0"/>
-                              </Group>
-                              <Group type="102" attributes="0">
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Group type="102" alignment="0" attributes="0">
+                                      <Group type="102" attributes="0">
+                                          <EmptySpace max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="0" attributes="0">
                                               <Component id="saudeLeao" alignment="0" min="-2" pref="64" max="-2" attributes="0"/>
                                               <Component id="sorteLeao" alignment="0" min="-2" max="-2" attributes="0"/>
                                           </Group>
-                                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                       </Group>
-                                      <Component id="tfTrabalhoLeao" alignment="0" max="32767" attributes="0"/>
                                   </Group>
+                                  <EmptySpace min="0" pref="304" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
@@ -3726,9 +3773,9 @@
                           <Component id="tfAmorLeao" min="-2" pref="34" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Component id="trabalhoLeao" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="tfTrabalhoLeao" min="-2" pref="34" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
+                          <Component id="tfTrabalhoLeao" min="-2" pref="34" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
                           <Component id="saudeLeao" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="3" max="-2" attributes="0"/>
                           <Component id="tfSaudeLeao" min="-2" pref="34" max="-2" attributes="0"/>
@@ -3783,12 +3830,24 @@
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="tfAmorLeao">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="88%"/>
+                  </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="tfTrabalhoLeao">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="90%"/>
+                  </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="tfSaudeLeao">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="80%"/>
+                  </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="tfSorteLeao">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="85%"/>
+                  </Properties>
                 </Component>
               </SubComponents>
             </Container>
@@ -4369,32 +4428,27 @@
                           <Component id="amorVirgem" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       </Group>
-                      <Group type="102" alignment="0" attributes="0">
+                      <Group type="102" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="tfSorteVirgem" alignment="0" max="32767" attributes="0"/>
                               <Component id="tfSaudeVirgem" alignment="1" max="32767" attributes="0"/>
-                              <Group type="102" alignment="0" attributes="0">
+                              <Component id="tfTrabalhoVirgem" alignment="0" max="32767" attributes="0"/>
+                              <Group type="102" attributes="0">
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="102" alignment="0" attributes="0">
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="tituloEnergiaVirgem" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <Component id="trabalhoVirgem" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace min="0" pref="304" max="32767" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="102" alignment="0" attributes="0">
+                                          <EmptySpace max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="0" attributes="0">
                                               <Component id="saudeVirgem" alignment="0" min="-2" pref="64" max="-2" attributes="0"/>
                                               <Component id="sorteVirgem" alignment="0" min="-2" max="-2" attributes="0"/>
                                           </Group>
-                                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                       </Group>
-                                      <Component id="tfTrabalhoVirgem" alignment="0" max="32767" attributes="0"/>
                                   </Group>
+                                  <EmptySpace min="0" pref="304" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
@@ -4469,12 +4523,24 @@
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="tfAmorVirgem">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="75%"/>
+                  </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="tfTrabalhoVirgem">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="95%"/>
+                  </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="tfSaudeVirgem">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="72%"/>
+                  </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="tfSorteVirgem">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="70%"/>
+                  </Properties>
                 </Component>
               </SubComponents>
             </Container>
@@ -5060,32 +5126,27 @@
                           <Component id="amorLibra" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       </Group>
-                      <Group type="102" alignment="0" attributes="0">
+                      <Group type="102" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="tfSorteLibra" alignment="0" max="32767" attributes="0"/>
                               <Component id="tfSaudeLibra" alignment="1" max="32767" attributes="0"/>
-                              <Group type="102" alignment="0" attributes="0">
+                              <Component id="tfTrabalhoLibra" alignment="0" max="32767" attributes="0"/>
+                              <Group type="102" attributes="0">
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="102" alignment="0" attributes="0">
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="tituloEnergiaLibra" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <Component id="trabalhoLibra" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace min="0" pref="304" max="32767" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="102" alignment="0" attributes="0">
+                                          <EmptySpace max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="0" attributes="0">
                                               <Component id="saudeLibra" alignment="0" min="-2" pref="64" max="-2" attributes="0"/>
                                               <Component id="sorteLibra" alignment="0" min="-2" max="-2" attributes="0"/>
                                           </Group>
-                                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                       </Group>
-                                      <Component id="tfTrabalhoLibra" alignment="0" max="32767" attributes="0"/>
                                   </Group>
+                                  <EmptySpace min="0" pref="304" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
@@ -5160,12 +5221,24 @@
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="tfAmorLibra">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="90%"/>
+                  </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="tfTrabalhoLibra">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="80%"/>
+                  </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="tfSaudeLibra">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="70%"/>
+                  </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="tfSorteLibra">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="82%"/>
+                  </Properties>
                 </Component>
               </SubComponents>
             </Container>
@@ -5771,12 +5844,24 @@
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="tfAmorTouro">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="85%"/>
+                  </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="tfTrabalhoTouro">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="90%"/>
+                  </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="tfSaudeTouro">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="70%"/>
+                  </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="tfSorteTouro">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="80%"/>
+                  </Properties>
                 </Component>
                 <Container class="javax.swing.JPanel" name="areaEnergiaTouro1">
 
@@ -6988,12 +7073,24 @@
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="tfAmorEscorpiao">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="95%"/>
+                  </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="tfTrabalhoEscorpiao">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="88%"/>
+                  </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="tfSaudeEscorpiao">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="75%"/>
+                  </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="tfSorteEscorpiao">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="80%"/>
+                  </Properties>
                 </Component>
               </SubComponents>
             </Container>
@@ -7236,7 +7333,7 @@
                       <Color blue="33" green="33" red="33" type="rgb"/>
                     </Property>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="2" name="C:\Users\Ant&#xf4;nioVieira\Documents\projetoAppHoroscopo\Horoscopo\src\main\resources\assets\peixes.png"/>
+                      <Image iconType="3" name="/peixes.png"/>
                     </Property>
                   </Properties>
                 </Component>
@@ -7494,26 +7591,22 @@
                           </Group>
                           <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       </Group>
-                      <Group type="102" alignment="0" attributes="0">
+                      <Group type="102" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="tfTrabalhoPeixes" alignment="0" max="32767" attributes="0"/>
-                              <Group type="102" alignment="0" attributes="0">
+                              <Component id="tfSaudeTouro2" alignment="1" max="32767" attributes="0"/>
+                              <Component id="tfSorteTouro2" alignment="0" max="32767" attributes="0"/>
+                              <Group type="102" attributes="0">
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="tituloEnergiaTouro2" min="-2" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="tituloEnergiaTouro2" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="saudeTouro2" alignment="0" min="-2" pref="64" max="-2" attributes="0"/>
+                                      <Component id="sorteTouro2" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  </Group>
                                   <EmptySpace min="0" pref="304" max="32767" attributes="0"/>
                               </Group>
-                              <Component id="tfSorteTouro2" alignment="0" max="32767" attributes="0"/>
-                              <Component id="tfSaudeTouro2" alignment="1" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="saudeTouro2" alignment="0" min="-2" pref="64" max="-2" attributes="0"/>
-                              <Component id="sorteTouro2" alignment="0" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace max="32767" attributes="0"/>
                       </Group>
                       <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
@@ -7603,15 +7696,21 @@
                 <Component class="javax.swing.JTextField" name="tfTrabalhoPeixes">
                 </Component>
                 <Component class="javax.swing.JTextField" name="tfSaudeTouro2">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="60%"/>
+                  </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="tfSorteTouro2">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="85%"/>
+                  </Properties>
                 </Component>
                 <Container class="javax.swing.JPanel" name="areaEnergiaPeixes">
 
                   <Layout>
                     <DimensionLayout dim="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="tfAmorTouro3" alignment="0" max="32767" attributes="0"/>
+                          <Component id="tfAmorPeixe" alignment="0" max="32767" attributes="0"/>
                           <Group type="102" alignment="0" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="trabalhoPeixes" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -7621,7 +7720,7 @@
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="tfTrabalhoTouro3" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="tfTrabalhoPeixe" alignment="0" max="32767" attributes="0"/>
                                   <Group type="102" alignment="0" attributes="0">
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Component id="tituloEnergiaPeixes" min="-2" max="-2" attributes="0"/>
@@ -7650,11 +7749,11 @@
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Component id="amorPeixes" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
-                              <Component id="tfAmorTouro3" min="-2" pref="34" max="-2" attributes="0"/>
+                              <Component id="tfAmorPeixe" min="-2" pref="34" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="trabalhoPeixes" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="32767" attributes="0"/>
-                              <Component id="tfTrabalhoTouro3" min="-2" pref="34" max="-2" attributes="0"/>
+                              <Component id="tfTrabalhoPeixe" min="-2" pref="34" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="saudePeixes" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="3" max="-2" attributes="0"/>
@@ -7709,9 +7808,15 @@
                         <Property name="text" type="java.lang.String" value="Sorte:"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JTextField" name="tfAmorTouro3">
+                    <Component class="javax.swing.JTextField" name="tfAmorPeixe">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="93%"/>
+                      </Properties>
                     </Component>
-                    <Component class="javax.swing.JTextField" name="tfTrabalhoTouro3">
+                    <Component class="javax.swing.JTextField" name="tfTrabalhoPeixe">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="68%"/>
+                      </Properties>
                     </Component>
                     <Component class="javax.swing.JTextField" name="tfSaudePeixes">
                     </Component>
@@ -8730,12 +8835,24 @@
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="tfAmorSagitario">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="78%"/>
+                  </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="tfTrabalhoSagitario">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="98%"/>
+                  </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="tfSaudeSagitario">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="68%"/>
+                  </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="tfSorteSagitario">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="75%"/>
+                  </Properties>
                 </Component>
                 <Container class="javax.swing.JPanel" name="areaInformacoes5">
                   <Properties>
@@ -9612,7 +9729,7 @@
 
                   <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
                   <SubComponents>
-                    <Component class="javax.swing.JTextArea" name="txFortesCarpricornio1">
+                    <Component class="javax.swing.JTextArea" name="txFortesCarpricornio">
                       <Properties>
                         <Property name="columns" type="int" value="20"/>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
@@ -9631,7 +9748,7 @@
 
                   <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
                   <SubComponents>
-                    <Component class="javax.swing.JTextArea" name="txMelhorarCarpricornio1">
+                    <Component class="javax.swing.JTextArea" name="txMelhorarCarpricornio">
                       <Properties>
                         <Property name="columns" type="int" value="20"/>
                         <Property name="rows" type="int" value="5"/>
@@ -9652,13 +9769,14 @@
               <Layout>
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="tfAmorCarpricornio1" alignment="0" max="32767" attributes="0"/>
-                      <Group type="102" alignment="0" attributes="0">
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="trabalhoTouro4" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="amorTouro4" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" alignment="0" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="tfAmorCarpricornio" max="32767" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="trabalhoTouro4" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                          <Component id="amorTouro4" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
@@ -9697,10 +9815,16 @@
                           <Component id="tituloEnergiaTouro4" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Component id="amorTouro4" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
-                          <Component id="tfAmorCarpricornio1" min="-2" pref="34" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="trabalhoTouro4" min="-2" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" attributes="0">
+                                  <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
+                                  <Component id="trabalhoTouro4" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                  <Component id="tfAmorCarpricornio" min="-2" pref="34" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
                           <EmptySpace max="32767" attributes="0"/>
                           <Component id="tfTrabalhoCarpricornio1" min="-2" pref="34" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
@@ -9764,13 +9888,25 @@
                     <Property name="text" type="java.lang.String" value="Sorte:"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="tfAmorCarpricornio1">
+                <Component class="javax.swing.JTextField" name="tfAmorCarpricornio">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="70%"/>
+                  </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="tfTrabalhoCarpricornio1">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="98%"/>
+                  </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="tfSaudeCarpricornio1">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="68%"/>
+                  </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="tfSorteCarpricornio1">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="75%"/>
+                  </Properties>
                 </Component>
                 <Container class="javax.swing.JPanel" name="areaEnergiaCarpricornio1">
 
@@ -10230,7 +10366,7 @@
             <Container class="javax.swing.JPanel" name="areaMensagemCarpricornio1">
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="720" y="410" width="370" height="230"/>
+                  <AbsoluteConstraints x="710" y="440" width="370" height="230"/>
                 </Constraint>
               </Constraints>
 
@@ -10238,23 +10374,23 @@
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
+                          <Component id="btnCopiarMensagemCarpricornio1" min="-2" pref="276" max="-2" attributes="0"/>
+                          <EmptySpace pref="51" max="32767" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
-                                  <Component id="btnCopiarMensagemCarpricornio1" min="-2" pref="276" max="-2" attributes="0"/>
-                                  <EmptySpace min="0" pref="45" max="32767" attributes="0"/>
+                              <Group type="102" attributes="0">
+                                  <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
+                                  <Component id="jScrollPane27" pref="352" max="32767" attributes="0"/>
                               </Group>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="jScrollPane27" max="32767" attributes="0"/>
+                              <Group type="102" attributes="0">
+                                  <Component id="tituloMensagemCarpricornio1" min="-2" pref="217" max="-2" attributes="0"/>
+                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
-                          <Component id="tituloMensagemCarpricornio1" min="-2" pref="217" max="-2" attributes="0"/>
-                          <EmptySpace max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -10288,7 +10424,7 @@
 
                   <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
                   <SubComponents>
-                    <Component class="javax.swing.JTextArea" name="txMensagemCarpricornio1">
+                    <Component class="javax.swing.JTextArea" name="txMensagemCarpricornio">
                       <Properties>
                         <Property name="columns" type="int" value="20"/>
                         <Property name="rows" type="int" value="5"/>
@@ -10315,27 +10451,25 @@
             <Container class="javax.swing.JPanel" name="areaPrevisoeCarpricornio1">
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="300" y="410" width="370" height="230"/>
+                  <AbsoluteConstraints x="300" y="430" width="370" height="230"/>
                 </Constraint>
               </Constraints>
 
               <Layout>
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jScrollPane28" alignment="0" max="32767" attributes="0"/>
+                      <Group type="102" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace max="-2" attributes="0"/>
                                   <Component id="previsaoCarpricornio1" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                               </Group>
-                              <Component id="jScrollPane28" alignment="0" max="32767" attributes="0"/>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
+                                  <Component id="btnAtualizarCarpricornio1" min="-2" pref="273" max="-2" attributes="0"/>
+                              </Group>
                           </Group>
-                          <EmptySpace max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
-                          <Component id="btnAtualizarCarpricornio1" min="-2" pref="273" max="-2" attributes="0"/>
                           <EmptySpace pref="50" max="32767" attributes="0"/>
                       </Group>
                   </Group>
